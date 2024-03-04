@@ -20,11 +20,10 @@ const Body = () => {
     };
     productList.push(obj);
     localStorage.setItem("ProductList", JSON.stringify(productList));
-    console.log(productList)
     productName.current.value = "";
     sellingPrice.current.value = "";
     productId.current.value = "";
-    setProductList(productList);
+    setProductList(JSON.parse(localStorage.getItem("ProductList")));
      
   };
   const delHandler = (e) => {
